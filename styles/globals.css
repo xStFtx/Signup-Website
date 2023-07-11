@@ -8,6 +8,14 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transform: scale(0.9); /* Added scale transform */
+  transition: transform 0.3s ease-in-out; /* Added transition */
+
+}
+
+.container:hover {
+  transform: scale(1); /* Scale up on hover */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6); /* Enhanced box shadow on hover */
 }
 
 .container::before,
@@ -19,6 +27,7 @@
   background: linear-gradient(to bottom right, #1a1a1a, #363636);
   transform: rotate(45deg);
   z-index: -1;
+  opacity: 0.7; /* Added opacity */
 }
 
 .container::before {
@@ -58,13 +67,14 @@
 }
 
 .logo:hover {
-  transform: rotate(360deg);
+  transform: rotate(360deg) scale(1.2); /* Added scale on hover */
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
 }
 
 form {
@@ -74,6 +84,7 @@ form {
 
 h2 {
   margin-top: 20px;
+  text-decoration: underline; /* Added underline */
 }
 
 input[type="text"],
@@ -84,6 +95,7 @@ select {
   margin-bottom: 10px;
   border: none;
   border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Added box shadow */
 }
 
 input[type="checkbox"] {
@@ -98,6 +110,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Added box shadow */
 }
 
 button[type="button"] {
@@ -112,4 +125,6 @@ button[type="submit"] {
 
 button:hover {
   background-color: darkgoldenrod;
+  transform: scale(1.1); /* Scale up on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Enhanced box shadow on hover */
 }
