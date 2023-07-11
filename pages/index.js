@@ -83,6 +83,7 @@ export default function Signup() {
       <div className="logo-container">
         <img src={logo} alt="Logo" className="logo" />
       </div>
+      <img src={logo} alt="Logo" className="logo" />
       <h1>Registration</h1>
       <form onSubmit={handleSignup}>
         <h2>Farm Name</h2>
