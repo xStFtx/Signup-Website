@@ -18,6 +18,7 @@ export default function Signup() {
   const [numberOfCars, setNumberOfCars] = useState(1);
   const [residents, setResidents] = useState([{ name: '', contactNumber: '', email: '' }]);
   const [cars, setCars] = useState([{ make: '', model: '', color: '', registrationNumber: '' }]);
+  axios.defaults.baseURL = 'https://g24-api-server-1-1.onrender.com'; // Replace with your Render server URL
 
   const handleSignup = async (e) => {
     e.preventDefault();
