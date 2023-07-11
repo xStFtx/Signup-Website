@@ -89,15 +89,6 @@ export default function Signup() {
           required
         />
 
-        <h2>Residents of the Property</h2>
-        <h3>Number of Residents</h3>
-        <input
-          type="number"
-          min="1"
-          value={numberOfResidents}
-          onChange={(e) => setNumberOfResidents(parseInt(e.target.value))}
-          required
-        />
 
         {Array.from({ length: numberOfResidents }, (_, index) => (
           <div key={index}>
@@ -133,14 +124,6 @@ export default function Signup() {
         </button>
 
         <h2>Vehicles</h2>
-        <h3>Number of Vehicles</h3>
-        <input
-          type="number"
-          min="1"
-          value={numberOfCars}
-          onChange={(e) => setNumberOfCars(parseInt(e.target.value))}
-          required
-        />
 
         {Array.from({ length: numberOfCars }, (_, index) => (
           <div key={index}>
