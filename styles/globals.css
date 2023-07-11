@@ -130,22 +130,22 @@ input[type="email"]:focus {
 button {
   padding: 10px 20px;
   margin-top: 20px;
-  background-color: gold; /* Changed background color */
-  color: black; /* Changed text color to black */
+  background-color: gold;
+  color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Added box shadow */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 button[type="button"] {
-  background-color: darkgray; /* Changed background color */
-  color: gold; /* Changed text color */
+  background-color: gold;
+  color: black;
 }
 
 button[type="submit"] {
-  background-color: gold; /* Changed background color */
-  color: black; /* Changed text color to black */
+  background-color: gold;
+  color: black;
 }
 
 button:hover {
