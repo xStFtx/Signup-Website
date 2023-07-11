@@ -9,6 +9,7 @@ export default function Signup() {
   const [emergencyContactName, setEmergencyContactName] = useState('');
   const [emergencyContactNumber, setEmergencyContactNumber] = useState('');
   const [mainMemberName, setMainMemberName] = useState('');
+  const [mainMemberID, setMainMemberID] = useState('');
   const [permission, setPermission] = useState(false);
   const [numberOfResidents, setNumberOfResidents] = useState(1);
   const [numberOfCars, setNumberOfCars] = useState(1);
@@ -29,6 +30,7 @@ export default function Signup() {
     setEmergencyContactName('');
     setEmergencyContactNumber('');
     setMainMemberName('');
+    setMainMemberID('');
     setPermission(false);
     setNumberOfResidents(1);
     setNumberOfCars(1);
@@ -139,18 +141,19 @@ export default function Signup() {
               onChange={(e) => handleResidentChange(index, 'email', e.target.value)}
               required
             />
-
-            {index === numberOfResidents - 1 && numberOfResidents > 1 && (
-              <button type="button" onClick={removeResidentField}>
-                Remove Resident
-              </button>
-            )}
           </div>
         ))}
 
-        <button type="button" onClick={addResidentField}>
-          Add Resident
-        </button>
+        <div>
+          <button type="button" onClick={addResidentField}>
+            Add Resident
+          </button>
+          {numberOfResidents > 1 && (
+            <button type="button" onClick={removeResidentField}>
+              Remove Resident
+            </button>
+          )}
+        </div>
 
         <h2>Vehicles</h2>
         <h3>Number of Vehicles</h3>
@@ -174,21 +177,26 @@ export default function Signup() {
             />
 
             {/* Include other relevant fields for cars */}
-            {index === numberOfCars - 1 && numberOfCars > 1 && (
-              <button type="button" onClick={removeCarField}>
-                Remove Vehicle
-              </button>
-            )}
           </div>
         ))}
 
-        <button type="button" onClick={addCarField}>
-          Add Vehicle
-        </button>
+        <div>
+          <button type="button" onClick={addCarField}>
+            Add Vehicle
+          </button>
+          {numberOfCars > 1 && (
+            <button type="button" onClick={removeCarField}>
+              Remove Vehicle
+            </button>
+          )}
+        </div>
 
         <h2>Main Member Details</h2>
         <h3>Full Name</h3>
         <input type="text" value={mainMemberName} onChange={(e) => setMainMemberName(e.target.value)} required />
+
+        <h3>ID Number</h3>
+        <input type="text" value={mainMemberID} onChange={(e) => setMainMemberID(e.target.value)} required />
 
         <h2>Signature of Authorized Person</h2>
         <input type="checkbox" checked={permission} onChange={(e) => setPermission(e.target.checked)} required />
