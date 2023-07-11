@@ -53,9 +53,23 @@ export default function Signup() {
     setResidents((prevResidents) => [...prevResidents, { name: '', contactNumber: '', email: '' }]);
   };
 
+  const removeResidentField = () => {
+    if (numberOfResidents > 1) {
+      setNumberOfResidents((prevCount) => prevCount - 1);
+      setResidents((prevResidents) => prevResidents.slice(0, prevResidents.length - 1));
+    }
+  };
+
   const addCarField = () => {
     setNumberOfCars((prevCount) => prevCount + 1);
     setCars((prevCars) => [...prevCars, { make: '', model: '', color: '', registrationNumber: '' }]);
+  };
+
+  const removeCarField = () => {
+    if (numberOfCars > 1) {
+      setNumberOfCars((prevCount) => prevCount - 1);
+      setCars((prevCars) => prevCars.slice(0, prevCars.length - 1));
+    }
   };
 
   return (
@@ -89,6 +103,15 @@ export default function Signup() {
           required
         />
 
+        <h2>Residents of the Property</h2>
+        <h3>Number of Residents</h3>
+        <input
+          type="number"
+          min="1"
+          value={numberOfResidents}
+          onChange={(e) => setNumberOfResidents(parseInt(e.target.value))}
+          required
+        />
 
         {Array.from({ length: numberOfResidents }, (_, index) => (
           <div key={index}>
@@ -116,6 +139,12 @@ export default function Signup() {
               onChange={(e) => handleResidentChange(index, 'email', e.target.value)}
               required
             />
+
+            {index === numberOfResidents - 1 && numberOfResidents > 1 && (
+              <button type="button" onClick={removeResidentField}>
+                Remove Resident
+              </button>
+            )}
           </div>
         ))}
 
@@ -124,6 +153,14 @@ export default function Signup() {
         </button>
 
         <h2>Vehicles</h2>
+        <h3>Number of Vehicles</h3>
+        <input
+          type="number"
+          min="1"
+          value={numberOfCars}
+          onChange={(e) => setNumberOfCars(parseInt(e.target.value))}
+          required
+        />
 
         {Array.from({ length: numberOfCars }, (_, index) => (
           <div key={index}>
@@ -137,6 +174,11 @@ export default function Signup() {
             />
 
             {/* Include other relevant fields for cars */}
+            {index === numberOfCars - 1 && numberOfCars > 1 && (
+              <button type="button" onClick={removeCarField}>
+                Remove Vehicle
+              </button>
+            )}
           </div>
         ))}
 
