@@ -10,11 +10,11 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   transform: scale(0.9); /* Added scale transform */
   transition: transform 0.3s ease-in-out; /* Added transition */
-
+  perspective: 1000px; /* Added perspective for 3D effect */
 }
 
 .container:hover {
-  transform: scale(1); /* Scale up on hover */
+  transform: scale(1) rotateX(10deg) rotateY(10deg); /* Added 3D rotation on hover */
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6); /* Enhanced box shadow on hover */
 }
 
@@ -64,6 +64,7 @@
   width: 100px;
   height: 100px;
   transition: transform 0.3s ease;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); /* Added drop shadow */
 }
 
 .logo:hover {
@@ -96,6 +97,16 @@ select {
   border: none;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Added box shadow */
+  outline: none; /* Removed outline */
+  background-color: #222; /* Changed background color */
+  color: #ddd; /* Changed text color */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); /* Enhanced box shadow on focus */
 }
 
 input[type="checkbox"] {
@@ -127,4 +138,26 @@ button:hover {
   background-color: darkgoldenrod;
   transform: scale(1.1); /* Scale up on hover */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Enhanced box shadow on hover */
+}
+
+body {
+  background: radial-gradient(circle, #383838 10%, transparent 70%),
+    linear-gradient(to bottom right, #000000, #383838);
+  background-size: 300% 300%, cover;
+  background-position: center;
+  animation: background-animation 20s infinite;
+  perspective: 800px; /* Added perspective for 3D effect */
+  perspective-origin: center; /* Set the origin of the 3D effect */
+}
+
+@keyframes background-animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
