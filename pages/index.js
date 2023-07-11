@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from './logo.png';
 
 export default function Signup() {
   const [farmName, setFarmName] = useState('');
@@ -80,7 +81,7 @@ export default function Signup() {
   return (
     <div className="container">
       <div className="logo-container">
-        <img src="logo.png" alt="Logo" className="logo" />
+        <img src={logo} alt="Logo" className="logo" />
       </div>
       <h1>Registration</h1>
       <form onSubmit={handleSignup}>
