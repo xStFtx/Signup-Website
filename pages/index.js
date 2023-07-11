@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import logo from './logo.png';
 import axios from 'axios';
 
+const API_BASE_URL = 'https://g24-api-server-1-1.onrender.com'; // Replace this with your server's base URL
+
+const apiClient = axios.create({
+  baseURL:API_BASE_URL,
+});
+
 export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -41,7 +47,7 @@ export default function Signup() {
     };
 
     try {
-      const response = await axios.post('/signup', userData);
+      const response = await apiClient.post('/signup', userData);
       console.log(response.data); // Handle the response from the server
 
       // Reset the form
