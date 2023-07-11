@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from './logo.png';
+import axios from 'axios';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -18,7 +19,7 @@ export default function Signup() {
   const [residents, setResidents] = useState([{ name: '', contactNumber: '', email: '' }]);
   const [cars, setCars] = useState([{ make: '', model: '', color: '', registrationNumber: '' }]);
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
 
     // Perform form validation and submit data to the server
@@ -38,25 +39,30 @@ export default function Signup() {
       cars,
     };
 
-    // Make an API request to submit the userData to the server
-    // ...
+    try {
+      const response = await axios.post('/signup', userData);
+      console.log(response.data); // Handle the response from the server
 
-    // Reset the form
-    setEmail('');
-    setPassword('');
-    setFarmName('');
-    setAddress('');
-    setContactNumber('');
-    setContactDetails('');
-    setEmergencyContactName('');
-    setEmergencyContactNumber('');
-    setMainMemberName('');
-    setMainMemberID('');
-    setPermission(false);
-    setNumberOfResidents(1);
-    setNumberOfCars(1);
-    setResidents([{ name: '', contactNumber: '', email: '' }]);
-    setCars([{ make: '', model: '', color: '', registrationNumber: '' }]);
+      // Reset the form
+      setEmail('');
+      setPassword('');
+      setFarmName('');
+      setAddress('');
+      setContactNumber('');
+      setContactDetails('');
+      setEmergencyContactName('');
+      setEmergencyContactNumber('');
+      setMainMemberName('');
+      setMainMemberID('');
+      setPermission(false);
+      setNumberOfResidents(1);
+      setNumberOfCars(1);
+      setResidents([{ name: '', contactNumber: '', email: '' }]);
+      setCars([{ make: '', model: '', color: '', registrationNumber: '' }]);
+    } catch (error) {
+      console.error('Error signing up:', error);
+      // Handle the error
+    }
   };
 
   const handleResidentChange = (index, field, value) => {
@@ -122,7 +128,12 @@ export default function Signup() {
 
         <h2>Emergency Contact Person</h2>
         <h3>Name</h3>
-        <input type="text" value={emergencyContactName} onChange={(e) => setEmergencyContactName(e.target.value)} required />
+        <input
+          type="text"
+          value={emergencyContactName}
+          onChange={(e) => setEmergencyContactName(e.target.value)}
+          required
+        />
 
         <h3>Contact Number</h3>
         <input
@@ -143,6 +154,7 @@ export default function Signup() {
         <h2>Signature of Authorized Person</h2>
         <input type="checkbox" checked={permission} onChange={(e) => setPermission(e.target.checked)} required />
         <label>I give permission for the above information to be provided to emergency services if necessary.</label>
+
         {Array.from({ length: numberOfResidents }, (_, index) => (
           <div key={index}>
             <h3>Resident {index + 1}</h3>
