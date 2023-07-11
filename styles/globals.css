@@ -98,8 +98,8 @@ select {
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Added box shadow */
   outline: none; /* Removed outline */
-  background-color: #222; /* Changed background color */
-  color: #ddd; /* Changed text color */
+  background-color: gold; /* Changed background color */
+  color: darkgray; /* Changed text color */
 }
 
 input[type="text"]:focus,
@@ -116,8 +116,8 @@ input[type="checkbox"] {
 button {
   padding: 10px 20px;
   margin-top: 20px;
-  background-color: gold;
-  color: darkgray;
+  background-color: gold; /* Changed background color */
+  color: darkgray; /* Changed text color */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -125,13 +125,13 @@ button {
 }
 
 button[type="button"] {
-  background-color: darkgray;
-  color: gold;
+  background-color: darkgray; /* Changed background color */
+  color: gold; /* Changed text color */
 }
 
 button[type="submit"] {
-  background-color: gold;
-  color: darkgray;
+  background-color: gold; /* Changed background color */
+  color: darkgray; /* Changed text color */
 }
 
 button:hover {
