@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import logo from './logo.png';
 
 export default function Signup() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [farmName, setFarmName] = useState('');
   const [address, setAddress] = useState('');
   const [contactNumber, setContactNumber] = useState('');
@@ -20,9 +22,28 @@ export default function Signup() {
     e.preventDefault();
 
     // Perform form validation and submit data to the server
+    const userData = {
+      email,
+      password,
+      farmName,
+      address,
+      contactNumber,
+      contactDetails,
+      emergencyContactName,
+      emergencyContactNumber,
+      mainMemberName,
+      mainMemberID,
+      permission,
+      residents,
+      cars,
+    };
+
+    // Make an API request to submit the userData to the server
     // ...
 
     // Reset the form
+    setEmail('');
+    setPassword('');
     setFarmName('');
     setAddress('');
     setContactNumber('');
@@ -81,6 +102,12 @@ export default function Signup() {
       </div>
       <h1>Registration</h1>
       <form onSubmit={handleSignup}>
+        <h2>Email</h2>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+
+        <h2>Password</h2>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+
         <h2>Farm Name</h2>
         <input type="text" value={farmName} onChange={(e) => setFarmName(e.target.value)} required />
 
@@ -185,7 +212,6 @@ export default function Signup() {
         </div>
 
         <button type="submit">Register</button>
-        
       </form>
     </div>
   );
