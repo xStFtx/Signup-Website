@@ -116,15 +116,6 @@ export default function Signup() {
         <h2>Signature of Authorized Person</h2>
         <input type="checkbox" checked={permission} onChange={(e) => setPermission(e.target.checked)} required />
         <label>I give permission for the above information to be provided to emergency services if necessary.</label>
-        <h3>Number of Residents</h3>
-        <input
-          type="number"
-          min="1"
-          value={numberOfResidents}
-          onChange={(e) => setNumberOfResidents(parseInt(e.target.value))}
-          required
-        />
-
         {Array.from({ length: numberOfResidents }, (_, index) => (
           <div key={index}>
             <h3>Resident {index + 1}</h3>
@@ -166,14 +157,6 @@ export default function Signup() {
         </div>
 
         <h2>Vehicles</h2>
-        <h3>Number of Vehicles</h3>
-        <input
-          type="number"
-          min="1"
-          value={numberOfCars}
-          onChange={(e) => setNumberOfCars(parseInt(e.target.value))}
-          required
-        />
 
         {Array.from({ length: numberOfCars }, (_, index) => (
           <div key={index}>
