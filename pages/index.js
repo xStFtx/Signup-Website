@@ -8,17 +8,7 @@ export default function Signup() {
   const [contactDetails, setContactDetails] = useState('');
   const [emergencyContactName, setEmergencyContactName] = useState('');
   const [emergencyContactNumber, setEmergencyContactNumber] = useState('');
-  const [headOfHouseName, setHeadOfHouseName] = useState('');
-  const [headOfHouseContactNumber, setHeadOfHouseContactNumber] = useState('');
-  const [headOfHouseEmailAddress, setHeadOfHouseEmailAddress] = useState('');
-  const [medicalAid, setMedicalAid] = useState('');
-  const [medicalAidNumber, setMedicalAidNumber] = useState('');
-  const [medicalAidPlan, setMedicalAidPlan] = useState('');
   const [mainMemberName, setMainMemberName] = useState('');
-  const [identificationNumber, setIdentificationNumber] = useState('');
-  const [allergies, setAllergies] = useState('');
-  const [medicalConditions, setMedicalConditions] = useState('');
-  const [chronicMedication, setChronicMedication] = useState('');
   const [permission, setPermission] = useState(false);
   const [numberOfResidents, setNumberOfResidents] = useState(1);
   const [numberOfCars, setNumberOfCars] = useState(1);
@@ -38,17 +28,7 @@ export default function Signup() {
     setContactDetails('');
     setEmergencyContactName('');
     setEmergencyContactNumber('');
-    setHeadOfHouseName('');
-    setHeadOfHouseContactNumber('');
-    setHeadOfHouseEmailAddress('');
-    setMedicalAid('');
-    setMedicalAidNumber('');
-    setMedicalAidPlan('');
     setMainMemberName('');
-    setIdentificationNumber('');
-    setAllergies('');
-    setMedicalConditions('');
-    setChronicMedication('');
     setPermission(false);
     setNumberOfResidents(1);
     setNumberOfCars(1);
@@ -181,14 +161,9 @@ export default function Signup() {
           Add Vehicle
         </button>
 
-        <h2>Medical Details of Residents</h2>
-        {/* Include medical details fields for residents */}
-
         <h2>Main Member Details</h2>
         <h3>Full Name</h3>
         <input type="text" value={mainMemberName} onChange={(e) => setMainMemberName(e.target.value)} required />
-
-        {/* Include other relevant fields for the head member */}
 
         <h2>Signature of Authorized Person</h2>
         <input type="checkbox" checked={permission} onChange={(e) => setPermission(e.target.checked)} required />
