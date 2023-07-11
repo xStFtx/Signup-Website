@@ -99,7 +99,7 @@ select {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Added box shadow */
   outline: none; /* Removed outline */
   background-color: gold; /* Changed background color */
-  color: darkgray; /* Changed text color */
+  color: black; /* Changed text color to black */
 }
 
 input[type="text"]:focus,
@@ -117,7 +117,7 @@ button {
   padding: 10px 20px;
   margin-top: 20px;
   background-color: gold; /* Changed background color */
-  color: darkgray; /* Changed text color */
+  color: black; /* Changed text color to black */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -131,7 +131,7 @@ button[type="button"] {
 
 button[type="submit"] {
   background-color: gold; /* Changed background color */
-  color: darkgray; /* Changed text color */
+  color: black; /* Changed text color to black */
 }
 
 button:hover {
