@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 
 export default function Signup() {
-  const [naamVanPlaas, setNaamVanPlaas] = useState('');
-  const [adres, setAdres] = useState('');
-  const [kontaknommer, setKontaknommer] = useState('');
-  const [kontakbesonderhede, setKontakbesonderhede] = useState('');
-  const [noodNaam, setNoodNaam] = useState('');
-  const [noodKontaknommer, setNoodKontaknommer] = useState('');
-  const [hoofVanHuisNaamEnVan, setHoofVanHuisNaamEnVan] = useState('');
-  const [hoofVanHuisKontaknommer, setHoofVanHuisKontaknommer] = useState('');
-  const [hoofVanHuisEposAdres, setHoofVanHuisEposAdres] = useState('');
-  const [mediesefonds, setMediesefonds] = useState('');
-  const [mediesefondsNommer, setMediesefondsNommer] = useState('');
-  const [mediesefondsPlan, setMediesefondsPlan] = useState('');
-  const [hooflidNaamEnVan, setHooflidNaamEnVan] = useState('');
-  const [identiteitsnommer, setIdentiteitsnommer] = useState('');
-  const [allergiee, setAllergiee] = useState('');
-  const [medieseKondisies, setMedieseKondisies] = useState('');
-  const [kronieseMedikasie, setKronieseMedikasie] = useState('');
+  const [farmName, setFarmName] = useState('');
+  const [address, setAddress] = useState('');
+  const [contactNumber, setContactNumber] = useState('');
+  const [contactDetails, setContactDetails] = useState('');
+  const [emergencyContactName, setEmergencyContactName] = useState('');
+  const [emergencyContactNumber, setEmergencyContactNumber] = useState('');
+  const [headOfHouseName, setHeadOfHouseName] = useState('');
+  const [headOfHouseContactNumber, setHeadOfHouseContactNumber] = useState('');
+  const [headOfHouseEmailAddress, setHeadOfHouseEmailAddress] = useState('');
+  const [medicalAid, setMedicalAid] = useState('');
+  const [medicalAidNumber, setMedicalAidNumber] = useState('');
+  const [medicalAidPlan, setMedicalAidPlan] = useState('');
+  const [mainMemberName, setMainMemberName] = useState('');
+  const [identificationNumber, setIdentificationNumber] = useState('');
+  const [allergies, setAllergies] = useState('');
+  const [medicalConditions, setMedicalConditions] = useState('');
+  const [chronicMedication, setChronicMedication] = useState('');
   const [permission, setPermission] = useState(false);
   const [numberOfResidents, setNumberOfResidents] = useState(1);
   const [numberOfCars, setNumberOfCars] = useState(1);
@@ -31,23 +31,23 @@ export default function Signup() {
     // ...
 
     // Reset the form
-    setNaamVanPlaas('');
-    setAdres('');
-    setKontaknommer('');
-    setKontakbesonderhede('');
-    setNoodNaam('');
-    setNoodKontaknommer('');
-    setHoofVanHuisNaamEnVan('');
-    setHoofVanHuisKontaknommer('');
-    setHoofVanHuisEposAdres('');
-    setMediesefonds('');
-    setMediesefondsNommer('');
-    setMediesefondsPlan('');
-    setHooflidNaamEnVan('');
-    setIdentiteitsnommer('');
-    setAllergiee('');
-    setMedieseKondisies('');
-    setKronieseMedikasie('');
+    setFarmName('');
+    setAddress('');
+    setContactNumber('');
+    setContactDetails('');
+    setEmergencyContactName('');
+    setEmergencyContactNumber('');
+    setHeadOfHouseName('');
+    setHeadOfHouseContactNumber('');
+    setHeadOfHouseEmailAddress('');
+    setMedicalAid('');
+    setMedicalAidNumber('');
+    setMedicalAidPlan('');
+    setMainMemberName('');
+    setIdentificationNumber('');
+    setAllergies('');
+    setMedicalConditions('');
+    setChronicMedication('');
     setPermission(false);
     setNumberOfResidents(1);
     setNumberOfCars(1);
@@ -79,32 +79,37 @@ export default function Signup() {
 
   return (
     <div className="container">
-          <div className="logo-container">
-        <img src="../styles/logo.png" alt="Logo" className="logo" />
+      <div className="logo-container">
+        <img src="logo.png" alt="Logo" className="logo" />
       </div>
-      <h1>Registrasie</h1>
+      <h1>Registration</h1>
       <form onSubmit={handleSignup}>
-        <h2>Naam van Plaas</h2>
-        <input type="text" value={naamVanPlaas} onChange={(e) => setNaamVanPlaas(e.target.value)} required />
+        <h2>Farm Name</h2>
+        <input type="text" value={farmName} onChange={(e) => setFarmName(e.target.value)} required />
 
-        <h2>Adres</h2>
-        <input type="text" value={adres} onChange={(e) => setAdres(e.target.value)} required />
+        <h2>Address</h2>
+        <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} required />
 
-        <h2>Kontaknommer</h2>
-        <input type="text" value={kontaknommer} onChange={(e) => setKontaknommer(e.target.value)} required />
+        <h2>Contact Number</h2>
+        <input type="text" value={contactNumber} onChange={(e) => setContactNumber(e.target.value)} required />
 
-        <h2>Kontakbesonderhede</h2>
-        <textarea value={kontakbesonderhede} onChange={(e) => setKontakbesonderhede(e.target.value)} required />
+        <h2>Contact Details</h2>
+        <textarea value={contactDetails} onChange={(e) => setContactDetails(e.target.value)} required />
 
-        <h2>Van Persoon in die Geval van Nood</h2>
-        <h3>Naam</h3>
-        <input type="text" value={noodNaam} onChange={(e) => setNoodNaam(e.target.value)} required />
+        <h2>Emergency Contact Person</h2>
+        <h3>Name</h3>
+        <input type="text" value={emergencyContactName} onChange={(e) => setEmergencyContactName(e.target.value)} required />
 
-        <h3>Kontaknommer</h3>
-        <input type="text" value={noodKontaknommer} onChange={(e) => setNoodKontaknommer(e.target.value)} required />
+        <h3>Contact Number</h3>
+        <input
+          type="text"
+          value={emergencyContactNumber}
+          onChange={(e) => setEmergencyContactNumber(e.target.value)}
+          required
+        />
 
-        <h2>Inwoners van Eiendom</h2>
-        <h3>Aantal Inwoners</h3>
+        <h2>Residents of the Property</h2>
+        <h3>Number of Residents</h3>
         <input
           type="number"
           min="1"
@@ -115,8 +120,8 @@ export default function Signup() {
 
         {Array.from({ length: numberOfResidents }, (_, index) => (
           <div key={index}>
-            <h3>Inwoner {index + 1}</h3>
-            <h4>Naam</h4>
+            <h3>Resident {index + 1}</h3>
+            <h4>Name</h4>
             <input
               type="text"
               value={residents[index].name}
@@ -124,7 +129,7 @@ export default function Signup() {
               required
             />
 
-            <h4>Kontaknommer</h4>
+            <h4>Contact Number</h4>
             <input
               type="text"
               value={residents[index].contactNumber}
@@ -132,7 +137,7 @@ export default function Signup() {
               required
             />
 
-            <h4>E-pos Adres</h4>
+            <h4>Email Address</h4>
             <input
               type="email"
               value={residents[index].email}
@@ -143,11 +148,11 @@ export default function Signup() {
         ))}
 
         <button type="button" onClick={addResidentField}>
-          Voeg Inwoner by
+          Add Resident
         </button>
 
-        <h2>Voertuie</h2>
-        <h3>Aantal Voertuie</h3>
+        <h2>Vehicles</h2>
+        <h3>Number of Vehicles</h3>
         <input
           type="number"
           min="1"
@@ -158,8 +163,8 @@ export default function Signup() {
 
         {Array.from({ length: numberOfCars }, (_, index) => (
           <div key={index}>
-            <h3>Voertuig {index + 1}</h3>
-            <h4>Fabrikaat</h4>
+            <h3>Vehicle {index + 1}</h3>
+            <h4>Make</h4>
             <input
               type="text"
               value={cars[index].make}
@@ -172,23 +177,23 @@ export default function Signup() {
         ))}
 
         <button type="button" onClick={addCarField}>
-          Voeg Voertuig by
+          Add Vehicle
         </button>
 
-        <h2>Mediese Besonderhede van Inwoners</h2>
+        <h2>Medical Details of Residents</h2>
         {/* Include medical details fields for residents */}
 
-        <h2>Besonderhede van Hooflid</h2>
-        <h3>Volle Naam en Van</h3>
-        <input type="text" value={hooflidNaamEnVan} onChange={(e) => setHooflidNaamEnVan(e.target.value)} required />
+        <h2>Main Member Details</h2>
+        <h3>Full Name</h3>
+        <input type="text" value={mainMemberName} onChange={(e) => setMainMemberName(e.target.value)} required />
 
         {/* Include other relevant fields for the head member */}
 
-        <h2>Handtekening van Gemagtigde Persoon</h2>
+        <h2>Signature of Authorized Person</h2>
         <input type="checkbox" checked={permission} onChange={(e) => setPermission(e.target.checked)} required />
-        <label>Ek gee toestemming dat bogenoemde inligting aan nooddienste mag verskaf word indien nodig.</label>
+        <label>I give permission for the above information to be provided to emergency services if necessary.</label>
 
-        <button type="submit">Registreer</button>
+        <button type="submit">Register</button>
       </form>
     </div>
   );
