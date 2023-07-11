@@ -14,7 +14,7 @@
 }
 
 .container:hover {
-  transform: scale(1) rotateX(10deg) rotateY(10deg); /* Added 3D rotation on hover */
+  transform: scale(1); /* Scale up on hover */
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6); /* Enhanced box shadow on hover */
 }
 
