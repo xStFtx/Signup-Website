@@ -79,6 +79,9 @@ export default function Signup() {
 
   return (
     <div className="container">
+          <div className="logo-container">
+        <img src="../styles/logo.png" alt="Logo" className="logo" />
+      </div>
       <h1>Registrasie</h1>
       <form onSubmit={handleSignup}>
         <h2>Naam van Plaas</h2>
