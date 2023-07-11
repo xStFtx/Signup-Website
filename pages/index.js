@@ -106,6 +106,16 @@ export default function Signup() {
         />
 
         <h2>Residents of the Property</h2>
+        <h2>Main Member Details</h2>
+        <h3>Full Name</h3>
+        <input type="text" value={mainMemberName} onChange={(e) => setMainMemberName(e.target.value)} required />
+
+        <h3>ID Number</h3>
+        <input type="text" value={mainMemberID} onChange={(e) => setMainMemberID(e.target.value)} required />
+
+        <h2>Signature of Authorized Person</h2>
+        <input type="checkbox" checked={permission} onChange={(e) => setPermission(e.target.checked)} required />
+        <label>I give permission for the above information to be provided to emergency services if necessary.</label>
         <h3>Number of Residents</h3>
         <input
           type="number"
@@ -190,17 +200,6 @@ export default function Signup() {
             </button>
           )}
         </div>
-
-        <h2>Main Member Details</h2>
-        <h3>Full Name</h3>
-        <input type="text" value={mainMemberName} onChange={(e) => setMainMemberName(e.target.value)} required />
-
-        <h3>ID Number</h3>
-        <input type="text" value={mainMemberID} onChange={(e) => setMainMemberID(e.target.value)} required />
-
-        <h2>Signature of Authorized Person</h2>
-        <input type="checkbox" checked={permission} onChange={(e) => setPermission(e.target.checked)} required />
-        <label>I give permission for the above information to be provided to emergency services if necessary.</label>
 
         <button type="submit">Register</button>
       </form>
