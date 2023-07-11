@@ -68,13 +68,13 @@ export default function Signup() {
   };
 
   const addResidentField = () => {
-    const updatedResidents = [...residents, { name: '', contactNumber: '', email: '' }];
-    setResidents(updatedResidents);
+    setNumberOfResidents((prevCount) => prevCount + 1);
+    setResidents((prevResidents) => [...prevResidents, { name: '', contactNumber: '', email: '' }]);
   };
 
   const addCarField = () => {
-    const updatedCars = [...cars, { make: '', model: '', color: '', registrationNumber: '' }];
-    setCars(updatedCars);
+    setNumberOfCars((prevCount) => prevCount + 1);
+    setCars((prevCars) => [...prevCars, { make: '', model: '', color: '', registrationNumber: '' }]);
   };
 
   return (
@@ -139,7 +139,9 @@ export default function Signup() {
           </div>
         ))}
 
-        <button type="button" onClick={addResidentField}>Voeg Inwoner by</button>
+        <button type="button" onClick={addResidentField}>
+          Voeg Inwoner by
+        </button>
 
         <h2>Voertuie</h2>
         <h3>Aantal Voertuie</h3>
@@ -166,7 +168,9 @@ export default function Signup() {
           </div>
         ))}
 
-        <button type="button" onClick={addCarField}>Voeg Voertuig by</button>
+        <button type="button" onClick={addCarField}>
+          Voeg Voertuig by
+        </button>
 
         <h2>Mediese Besonderhede van Inwoners</h2>
         {/* Include medical details fields for residents */}
@@ -176,7 +180,7 @@ export default function Signup() {
         <input type="text" value={hooflidNaamEnVan} onChange={(e) => setHooflidNaamEnVan(e.target.value)} required />
 
         {/* Include other relevant fields for the head member */}
-        
+
         <h2>Handtekening van Gemagtigde Persoon</h2>
         <input type="checkbox" checked={permission} onChange={(e) => setPermission(e.target.checked)} required />
         <label>Ek gee toestemming dat bogenoemde inligting aan nooddienste mag verskaf word indien nodig.</label>
