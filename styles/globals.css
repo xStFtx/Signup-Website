@@ -175,3 +175,37 @@ body {
     background-position: 0% 0%;
   }
 }
+
+input[type="checkbox"] {
+  margin-top: 10px;
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  border: 2px solid gold;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: gold;
+}
+
+input[type="checkbox"]::before {
+  content: '\2713';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: gold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+input[type="checkbox"]:checked::before {
+  opacity: 1;
+}
