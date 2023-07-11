@@ -127,6 +127,22 @@ input[type="email"]:focus {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
 
+input[type="password"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  outline: none;
+  background-color: gold;
+  color: black;
+}
+
+input[type="password"]:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+
 button {
   padding: 10px 20px;
   margin-top: 20px;
