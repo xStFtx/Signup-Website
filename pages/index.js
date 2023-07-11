@@ -36,7 +36,6 @@ export default function Signup() {
     setNumberOfCars(1);
     setResidents([{ name: '', contactNumber: '', email: '' }]);
     setCars([{ make: '', model: '', color: '', registrationNumber: '' }]);
-    setRegisterSubmitted(true);
   };
 
   const handleResidentChange = (index, field, value) => {
@@ -188,7 +187,6 @@ export default function Signup() {
         <button type="submit">Register</button>
         
       </form>
-      {registerSubmitted && <p>Register Request Submitted</p>}
     </div>
   );
 }
