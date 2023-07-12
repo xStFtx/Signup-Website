@@ -5,7 +5,7 @@ import axios from 'axios';
 const API_BASE_URL = 'https://g24-api-server-1-1.onrender.com'; // Replace this with your server's base URL
 
 const apiClient = axios.create({
-  baseURL:API_BASE_URL,
+  baseURL: API_BASE_URL,
 });
 
 export default function Signup() {
@@ -24,7 +24,6 @@ export default function Signup() {
   const [numberOfCars, setNumberOfCars] = useState(1);
   const [residents, setResidents] = useState([{ name: '', contactNumber: '', email: '' }]);
   const [cars, setCars] = useState([{ make: '', model: '', color: '', registrationNumber: '' }]);
-  axios.defaults.baseURL = 'https://g24-api-server-1-1.onrender.com'; // Replace with your Render server URL
   const [registrationStatus, setRegistrationStatus] = useState('');
 
   const handleSignup = async (e) => {
@@ -48,7 +47,7 @@ export default function Signup() {
     };
 
     try {
-      const response = await axios.post(`${API_BASE_URL}/signup`, userData);
+      const response = await apiClient.post('/signup', userData);
       console.log(response.data); // Handle the response from the server
 
       setRegistrationStatus('success');
@@ -236,7 +235,6 @@ export default function Signup() {
         </div>
 
         <button type="submit">Register</button>
-    
       </form>
     </div>
   );
