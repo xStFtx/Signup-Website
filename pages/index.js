@@ -115,27 +115,54 @@ export default function Signup() {
         <img src={logo} alt="Logo" className="logo" />
       </div>
       <h1>Registration</h1>
-      {registrationStatus === 'success' && (
-        <p>Registration successful!.</p>
-      )}
+      {registrationStatus === 'success' && <p>Registration successful!.</p>}
       <form onSubmit={handleSignup}>
         <h2>Email</h2>
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
 
         <h2>Password</h2>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
 
         <h2>Farm Name</h2>
-        <input type="text" value={farmName} onChange={(e) => setFarmName(e.target.value)} required />
+        <input
+          type="text"
+          value={farmName}
+          onChange={(e) => setFarmName(e.target.value)}
+          required
+        />
 
         <h2>Address</h2>
-        <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} required />
+        <input
+          type="text"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+          required
+        />
 
         <h2>Contact Number</h2>
-        <input type="text" value={contactNumber} onChange={(e) => setContactNumber(e.target.value)} required />
+        <input
+          type="text"
+          value={contactNumber}
+          onChange={(e) => setContactNumber(e.target.value)}
+          required
+        />
 
         <h2>Contact Details</h2>
-        <textarea value={contactDetails} onChange={(e) => setContactDetails(e.target.value)} required />
+        <textarea
+          value={contactDetails}
+          onChange={(e) => setContactDetails(e.target.value)}
+          required
+        />
 
         <h2>Emergency Contact Person</h2>
         <h3>Name</h3>
@@ -157,14 +184,32 @@ export default function Signup() {
         <h2>Residents of the Property</h2>
         <h2>Main Member Details</h2>
         <h3>Full Name</h3>
-        <input type="text" value={mainMemberName} onChange={(e) => setMainMemberName(e.target.value)} required />
+        <input
+          type="text"
+          value={mainMemberName}
+          onChange={(e) => setMainMemberName(e.target.value)}
+          required
+        />
 
         <h3>ID Number</h3>
-        <input type="text" value={mainMemberID} onChange={(e) => setMainMemberID(e.target.value)} required />
+        <input
+          type="text"
+          value={mainMemberID}
+          onChange={(e) => setMainMemberID(e.target.value)}
+          required
+        />
 
         <h2>Signature of Authorized Person</h2>
-        <input type="checkbox" checked={permission} onChange={(e) => setPermission(e.target.checked)} required />
-        <label>I give permission for the above information to be provided to emergency services if necessary.</label>
+        <input
+          type="checkbox"
+          checked={permission}
+          onChange={(e) => setPermission(e.target.checked)}
+          required
+        />
+        <label>
+          I give permission for the above information to be provided to
+          emergency services if necessary.
+        </label>
 
         {Array.from({ length: numberOfResidents }, (_, index) => (
           <div key={index}>
@@ -173,7 +218,9 @@ export default function Signup() {
             <input
               type="text"
               value={residents[index].name}
-              onChange={(e) => handleResidentChange(index, 'name', e.target.value)}
+              onChange={(e) =>
+                handleResidentChange(index, 'name', e.target.value)
+              }
               required
             />
 
@@ -181,7 +228,9 @@ export default function Signup() {
             <input
               type="text"
               value={residents[index].contactNumber}
-              onChange={(e) => handleResidentChange(index, 'contactNumber', e.target.value)}
+              onChange={(e) =>
+                handleResidentChange(index, 'contactNumber', e.target.value)
+              }
               required
             />
 
@@ -189,7 +238,9 @@ export default function Signup() {
             <input
               type="email"
               value={residents[index].email}
-              onChange={(e) => handleResidentChange(index, 'email', e.target.value)}
+              onChange={(e) =>
+                handleResidentChange(index, 'email', e.target.value)
+              }
               required
             />
           </div>
