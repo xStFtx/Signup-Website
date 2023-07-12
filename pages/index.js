@@ -28,7 +28,7 @@ export default function Signup() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-
+  
     // Perform form validation and submit data to the server
     const userData = {
       email,
@@ -45,32 +45,33 @@ export default function Signup() {
       residents,
       cars,
     };
-
+  
     try {
       const response = await apiClient.post('/signup', userData);
       console.log(response.data); // Handle the response from the server
-
+  
       setRegistrationStatus('success');
-      // Reset the form
-      setEmail('');
-      setPassword('');
-      setFarmName('');
-      setAddress('');
-      setContactNumber('');
-      setContactDetails('');
-      setEmergencyContactName('');
-      setEmergencyContactNumber('');
-      setMainMemberName('');
-      setMainMemberID('');
-      setPermission(false);
-      setNumberOfResidents(1);
-      setNumberOfCars(1);
-      setResidents([{ name: '', contactNumber: '', email: '' }]);
-      setCars([{ make: '', model: '', color: '', registrationNumber: '' }]);
     } catch (error) {
       console.error('Error signing up:', error);
       // Handle the error
     }
+  
+    // Reset the form
+    setEmail('');
+    setPassword('');
+    setFarmName('');
+    setAddress('');
+    setContactNumber('');
+    setContactDetails('');
+    setEmergencyContactName('');
+    setEmergencyContactNumber('');
+    setMainMemberName('');
+    setMainMemberID('');
+    setPermission(false);
+    setNumberOfResidents(1);
+    setNumberOfCars(1);
+    setResidents([{ name: '', contactNumber: '', email: '' }]);
+    setCars([{ make: '', model: '', color: '', registrationNumber: '' }]);
   };
 
   const handleResidentChange = (index, field, value) => {
