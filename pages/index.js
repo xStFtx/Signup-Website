@@ -48,7 +48,7 @@ export default function Signup() {
     };
 
     try {
-      const response = await apiClient.post('/signup', userData);
+      const response = await axios.post(`${API_BASE_URL}/signup`, userData);
       console.log(response.data); // Handle the response from the server
 
       setRegistrationStatus('success');
