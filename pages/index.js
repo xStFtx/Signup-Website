@@ -25,6 +25,7 @@ export default function Signup() {
   const [residents, setResidents] = useState([{ name: '', contactNumber: '', email: '' }]);
   const [cars, setCars] = useState([{ make: '', model: '', color: '', registrationNumber: '' }]);
   axios.defaults.baseURL = 'https://g24-api-server-1-1.onrender.com'; // Replace with your Render server URL
+  const [registrationStatus, setRegistrationStatus] = useState('');
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -50,6 +51,7 @@ export default function Signup() {
       const response = await apiClient.post('/signup', userData);
       console.log(response.data); // Handle the response from the server
 
+      setRegistrationStatus('success');
       // Reset the form
       setEmail('');
       setPassword('');
@@ -114,6 +116,9 @@ export default function Signup() {
         <img src={logo} alt="Logo" className="logo" />
       </div>
       <h1>Registration</h1>
+      {registrationStatus === 'success' && (
+        <p>Registration successful!.</p>
+      )}
       <form onSubmit={handleSignup}>
         <h2>Email</h2>
         <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
@@ -231,6 +236,7 @@ export default function Signup() {
         </div>
 
         <button type="submit">Register</button>
+    
       </form>
     </div>
   );
