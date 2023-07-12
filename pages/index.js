@@ -113,7 +113,11 @@ export default function Signup() {
   return (
     <div className="container">
       <div className="logo-container">
-        <img src={logo} alt="Logo" className="logo" />
+      <Image
+          source={require('./logo.png')}
+          style={styles.logo}
+          resizeMode="contain"
+        />
       </div>
       <h1>Registration</h1>
       {registrationStatus === 'success' && <p>Registration successful!.</p>}
