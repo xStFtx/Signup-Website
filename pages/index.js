@@ -114,7 +114,7 @@ export default function Signup() {
     <div className="container">
       <div className="logo-container">
       <Image
-          source={require('./logo.png')}
+          source={require('../public/logo.png')}
           style={styles.logo}
           resizeMode="contain"
         />
