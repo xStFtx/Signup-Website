@@ -116,7 +116,7 @@ export default function Signup() {
       <Image
   src="/logo.png" // Assuming the logo image file is located in the public folder
   alt="Logo"
-  width={100}
+  width={250}
   height={100}
   layout="fixed"
 />
