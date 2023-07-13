@@ -114,9 +114,13 @@ export default function Signup() {
     <div className="container">
       <div className="logo-container">
       <Image
-          source={require('../public/logo.png')}
-          resizeMode="contain"
-        />
+  src="/logo.png" // Assuming the logo image file is located in the public folder
+  alt="Logo"
+  width={100}
+  height={100}
+  layout="fixed"
+/>
+
       </div>
       <h1>Registration</h1>
       {registrationStatus === 'success' && <p>Registration successful!.</p>}
