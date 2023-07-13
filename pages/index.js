@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-
 import axios from 'axios';
 
 const API_BASE_URL = 'https://g24-api-server-1-1.onrender.com'; // Replace this with your server's base URL
@@ -116,7 +115,6 @@ export default function Signup() {
       <div className="logo-container">
       <Image
           source={require('../public/logo.png')}
-          style={styles.logo}
           resizeMode="contain"
         />
       </div>
